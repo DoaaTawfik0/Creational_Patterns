@@ -1,11 +1,13 @@
 package com.doaatawfik;
 
-public abstract class NotificationManager {
-    abstract Notification createNotification();
+public class NotificationManager {
+    private final Notification notification;
+
+    public NotificationManager(Notification notification) {
+        this.notification = notification;
+    }
 
     public void sendNotification(String message) {
-
-        Notification notification = createNotification();
         notification.notifyUser(message);
     }
 }
